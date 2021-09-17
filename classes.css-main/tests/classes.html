@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="UTF-8">
+  <title>Level.css TEST</title>
+  <meta name="viewport" content="width=device-width, viewport-fit=cover">
+
+  <script src="./test.js" type=module></script>
+
+  <link rel="stylesheet" href="../../base.css/full.css">
+
+  <link rel="stylesheet" href="../../classless.css/variables.css">
+  <link rel="stylesheet" href="../../classless.css/classless.css">
+  <link rel="stylesheet" href="../../classless.css/aria.css">
+  <link rel="stylesheet" href="../../classless.css/more.css">
+  <link rel="stylesheet" href="../classes.css">
+
+
+  <style>
+    section {
+      padding:2rem;
+      background-color:#eee;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <section>
+    <h1>.u1-invert</h1>
+    <div class="u1-invert u1-p">
+      <h2>Should be inverted</h2>
+      <p>Some Text in a Paragraph Some Text in a Paragraph Some Text in a ParagraphSome Text in a Paragraph Some</p>
+    </div>
+  </section>
+
+  <section id=visually-hidden>
+    <h2>.visually-hidden</h2>
+
+    <div class=-wrapper style="overflow:auto">
+      <div>following content visible only by screen-readers:</div>
+      <div class=visually-hidden>
+        Can you hear me? Yes but you can not see me!
+        <a href="#">link</a>
+      </div>
+      <div>And more text</div>
+    </div>
+    <button>can i be clicked?</button>
+    <style>
+      #visually-hidden .visually-hidden:hover {
+        background:red;
+      }
+      #visually-hidden .-wrapper {
+        display:flex;
+      }
+      #visually-hidden .-wrapper > * {
+        background:yellow;
+        border:2px solid red;
+        position:static;
+      }
+      #visually-hidden .visually-hidden {
+        padding:200px;
+        border:100px solid red;
+        background:red;
+      }
+      </style>
+  </section>
+
+
+
+
+  <div style="margin-bottom:500px"></div>

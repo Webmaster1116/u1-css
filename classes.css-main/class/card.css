@@ -1,0 +1,22 @@
+.u1-card {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    border-radius:var(--radius);
+    overflow:hidden;
+    background-color:var(--color-area);
+    box-shadow:var(--shadow);
+}
+.u1-card > * {
+    flex-basis:12rem;
+    flex-grow:1;
+}
+
+/*
+.u1-c-m-0 :first-child {
+    margin-top:0;
+}
+.u1-c-m-0 :last-child {
+    margin-bottom:0;
+}
+*/

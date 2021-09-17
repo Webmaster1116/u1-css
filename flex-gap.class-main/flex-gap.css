@@ -1,0 +1,27 @@
+/* todo? all margins except right important? */
+
+.u1-flex-gap {
+    display:flex;
+    flex-wrap:wrap;
+    --u1-Gap:var(--gap, 1rem);
+    --u1-Row-gap:var(--u1-Gap);
+    --u1-Col-gap:var(--u1-Gap);
+    margin:
+        calc( var(--u1-Row-gap) * -.5 )
+        0
+        calc( var(--u1-Row-gap) * -.5 )
+        calc( var(--u1-Col-gap) * -1 ) !important;
+}
+.u1-flex-gap > * {
+    /* zzz
+    margin:
+        calc( var(--u1-Row-gap) * .5 )
+        0
+        calc( var(--u1-Row-gap) * .5 )
+        var(--u1-Col-gap);
+        */
+    margin-top: calc( var(--u1-Row-gap) * .5 ) !important;
+    margin-right: 0;
+    margin-bottom: calc( var(--u1-Row-gap) * .5 ) !important;
+    margin-left: var(--u1-Col-gap) !important;
+}

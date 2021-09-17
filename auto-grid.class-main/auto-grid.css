@@ -1,0 +1,28 @@
+/* needed as base for js */
+.u1-auto-grid {
+    display:flex;
+    flex-wrap:wrap;
+    --u1-Items-width: 10rem;
+    --u1-Gap: var(--gap, 1rem);
+    --u1-Col-gap: var(--u1-Gap);
+    --u1-Row-gap: var(--u1-Gap);
+
+    column-gap:var(--u1-Col-gap);
+    row-gap:var(--u1-Row-gap);
+}
+.u1-auto-grid > * {
+    /* display:block; why? zzz */
+    flex-basis:var(--u1-Items-width);
+    /* box-sizing:border-box; needed if standalone? Actually included in base.css  */
+}
+
+@supports (display: grid) {
+	.u1-auto-grid {
+		display: grid;
+        grid-column-gap: var(--u1-Col-gap); /* safari 10.3, after it column-gap */
+        grid-row-gap:    var(--u1-Row-gap);
+		grid-template-columns: repeat(auto-fill, minmax( var(--u1-Items-width), 1fr) ); /* min() not supported everywhere? */
+        grid-template-columns: repeat(auto-fill, minmax( min(var(--u1-Items-width), 100%) , 1fr) );
+		grid-auto-flow:dense; /* why */
+    }
+}

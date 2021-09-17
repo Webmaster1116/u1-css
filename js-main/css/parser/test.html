@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>parser</title>
+    </head>
+<body>
+
+
+<script type=module>
+
+import {dump} from 'https://cdn.jsdelivr.net/gh/nuxodin/dump.js@1.2.0/mod.min.js';
+import {tokenize, startEndConsumer, charsConsumer, stringIterator} from "./mod.js";
+
+
+var whitespaces = charsConsumer(" \t\n", 'ws');
+var commentMl   = startEndConsumer('/*','*/');
+var commentSl   = startEndConsumer('//',"\n");
+var string      = startEndConsumer('"', '"', '\\', 'string');
+
+
+export async function parseCode(str) {
+    return await tokenize( [whitespaces, commentMl, commentSl, string] , stringIterator(str));
+}
+
+
+let str = `"a\\"" "x" /**/`
+console.log(str)
+
+var tree = await parseCode(str, function(item){
+    console.log('found', item.parser.name, item.outer);
+});
+
+dumpOut.innerHTML = dump(tree, {inherit: true});
+
+</script>
+<div id=dumpOut></div>

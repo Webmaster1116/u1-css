@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>parser</title>
+    </head>
+<body>
+
+
+<script type=module>
+
+import {dump} from 'https://cdn.jsdelivr.net/gh/nuxodin/dump.js@1.2.0/mod.min.js';
+import {tokenize, startEndConsumer, charsConsumer, fnConsumer,stringIterator} from "./mod.js";
+
+
+var whitespaces = charsConsumer(" \t\n", 'ws');
+var commentMl   = startEndConsumer('/*','*/');
+var string      = startEndConsumer('"', '"', '\\', 'string');
+
+
+
+var atStatement = startEndConsumer('@',';','\\','at-rule',{contains:[string]});
+
+
+
+export async function parse(str) {
+    return await tokenize( [whitespaces, commentMl, atStatement] , stringIterator(str));
+}
+
+
+setTimeout(async function(){
+
+    let str = styleContent.innerHTML;
+    console.log(str)
+    var tree = await parse(str, function(item){
+        console.log('found', item.parser.name, item.outer);
+    });
+    dumpOut.innerHTML = dump(tree, {inherit: true});
+
+
+},10);
+
+
+</script>
+<div id=dumpOut></div>
+
+<style id=styleContent>
+  @import url("import\"te;st");
+
+  @import "asdf.ch";
+</style>

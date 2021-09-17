@@ -1,0 +1,11 @@
+/* rename to u1-pad? */
+.u1-p {
+    padding:var(--gap);
+}
+
+.u1-p :first-child {
+    margin-top:0;
+}
+.u1-p :last-child {
+    margin-bottom:0;
+}

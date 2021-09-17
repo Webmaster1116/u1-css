@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>u1-ico Test</title>
+
+        <link rel=stylesheet href="./style-has-include.css" id=aLink media=screen>
+        <link rel=stylesheet href="./style-no-include.css" >
+
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/full.css" crossorigin>
+
+        <script="./mod.js"></script>
+    </head>
+<body>
+
+<style id=aStyle>
+.style {
+    before:x;
+}
+</style>
+
+<script type=module>
+import '../mod.js';
+
+setTimeout(function(){
+
+    console.assert(aLink.sheet.media.item(0) === 'screen', {errorMsg: 'sheet has the mediaList of its element'});
+
+
+    console.log('dynamic add a <link rel=stylesheet> element')
+    placeholder.innerHTML =
+        `<link rel=stylesheet href="./style-has-include.css">
+         <link rel=stylesheet href="./style-no-include.css">`;
+},3000)
+</script>
+
+
+<style>
+.style {
+    after:x;
+}
+</style>
+
+
+
+<div id=placeholder>
+</div>

@@ -1,0 +1,60 @@
+@import './class/card.css';
+@import './class/invert.css';
+@import './class/p.css';
+
+
+/* namespace-less classes (well known / defacto standards) */
+
+/*
+## naming
+.sr-only:
+- tailwind
+- firefox-reader-mode
+
+.visually-hidden:
+- h5bp (main.css)
+- bootstrap
+- drupal
+- firefox-reader-mode
+*/
+.visually-hidden {
+    position: absolute !important;
+    padding:0 !important;
+    border:0 !important;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    overflow: clip; /* ch90 ff29 */
+    xcontent: url(); /* new idea, ok? screenreaders will read filename */
+    xcontain:strict; /* performance? */
+    xwhite-space: nowrap; /* why */
+    xmargin-left:-1px; /* can not reproduce  */
+}
+
+
+
+/*
+.u1-grow {
+    flex-grow:1;
+}
+.u1-flex-col {
+    display:flex;
+    flex-direction:column;
+}
+
+https://meowni.ca/posts/monica-dot-css/
+
+.horizontal {display: flex; flex-direction: row; justify-content: space-between}
+.vertical {display: flex; flex-direction: column}
+.center {justify-content: center; align-items: center}
+.flex {flex: 1}
+
+tailwind: .w-full
+bootstrap: .w-100
+codyhouse: .width-100%
+bulma: .is-fullwidth
+.u1-width-full {
+    width:100%;
+}
+*/

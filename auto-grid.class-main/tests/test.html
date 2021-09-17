@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>u1-ico Test</title>
+
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/full.css">
+
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/variables.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/classless.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/simple.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/more.min.css">
+
+        <link rel=stylesheet href="../auto-grid.css">
+<body>
+
+    <style contenteditable style="display:block">
+        .u1-auto-grid > * {
+            border:1px solid black;
+            padding:.5em;
+        }
+    </style>
+
+
+<section>
+    <h2></h2>
+    <div style="resize:both; overflow: auto; border:1px solid red; ">
+        <div class=u1-auto-grid>
+            <div>item1<br>heigter</div>
+            <div>item2</div>
+            <div>item3</div>
+            <div>item4</div>
+            <div>item5</div>
+            <div>item6</div>
+            <div>item7</div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Flexbox fallback (if grid not supported)</h2>
+    <div style="resize:both; overflow: auto; border:1px solid red; ">
+        <div class=u1-auto-grid style="display:flex">
+            <div>item1<br>heigter</div>
+            <div>item2</div>
+            <div>item3</div>
+            <div>item4</div>
+            <div>item5</div>
+            <div>item6</div>
+            <div>item7</div>
+        </div>
+    </div>
+</section>

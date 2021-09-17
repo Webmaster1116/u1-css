@@ -1,0 +1,9 @@
+u1-qrcode {
+    color:var(--color-text, '#000');
+    display:inline-block;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+}

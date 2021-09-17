@@ -1,0 +1,23 @@
+html {
+  --color-dark-orig:var(--color-dark);
+  --color-light-dark:var(--color-light);
+
+  --color2-dark-orig:var(--color2-dark);
+  --color2-light-dark:var(--color2-light);
+
+  --color-bg-orig:var(--color-bg);
+  --color-text-orig:var(--color-text);
+}
+.u1-invert {
+  --color-light: var(--color-dark-orig);
+  --color-dark:  var(--color-light-orig);
+
+  --color2-light: var(--color2-dark-orig);
+  --color2-dark:  var(--color2-light-orig);
+
+  --color-bg:var(--color-text-orig);
+  --color-text:var(--color-bg-orig);
+
+  background-color:var(--color-bg);
+  color:var(--color-text);
+}

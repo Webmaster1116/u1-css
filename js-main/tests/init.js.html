@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Level.css TEST</title>
+  <meta name="viewport" content="width=device-width">
+
+
+  <script src="../init.js" type=module></script>
+  <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/full.css" crossorigin>
+
+
+<body>
+
+<section>
+
+    <h2>Doubleclick on label and on summary should not select the text, but it is still selectable</h2>
+    <div id=dblClickTest>
+        <label>
+            A label for:
+            <input>
+        </label>
+
+        <details>
+            <summary>Summary</summary>
+            <div>
+                Details Content
+            </div>
+        </details>
+    </div>
+
+
+    <div id=dblClickTest_shadow style="border:1px solid">
+        The same inside Shadow-Dom<br>
+
+
+    </div>
+    <script>
+
+    /*
+    shadowDeepCss = function(shadow){
+        for (let ss of document.styleSheets) shadow.append(ss.ownerNode.cloneNode());
+    }
+    */
+
+    let shadow = dblClickTest_shadow.attachShadow({mode: 'open'});
+    //shadowDeepCss(shadow);
+    shadow.innerHTML += '<slot></slot>' + dblClickTest.innerHTML;
+
+    </script>
+</section>
